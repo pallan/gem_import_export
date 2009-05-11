@@ -2,11 +2,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{gem_import_export}
-  s.version = "0.0.1"
+  s.version = "0.0.2"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Peer Allan"]
-  s.date = %q{2009-05-10}
+  s.date = %q{2009-05-11}
   s.email = %q{peer@canadadrugs.com}
   s.extra_rdoc_files = [
     "LICENSE",
@@ -19,6 +19,7 @@ Gem::Specification.new do |s|
      "README.rdoc",
      "Rakefile",
      "VERSION",
+     "gem_import_export.gemspec",
      "lib/rubygems/commands/export_command.rb",
      "lib/rubygems/commands/import_command.rb",
      "lib/rubygems_plugin.rb",
@@ -29,7 +30,7 @@ Gem::Specification.new do |s|
   s.rdoc_options = ["--charset=UTF-8"]
   s.require_paths = ["lib"]
   s.rubygems_version = %q{1.3.3}
-  s.summary = %q{Adds the commands to RubyGems for importing and exporting repositories using a command plugin}
+  s.summary = %q{TODO}
   s.test_files = [
     "spec/gem_import_export_spec.rb",
      "spec/spec_helper.rb"

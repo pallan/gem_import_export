@@ -11,7 +11,7 @@ class Gem::Commands::ExportCommand < Gem::Command
   end
 
   def arguments # :nodoc:
-    "FILE        location to save the export to"
+    "GEMFILE        location to save the export to"
   end
 
   def defaults_str # :nodoc:
@@ -19,10 +19,18 @@ class Gem::Commands::ExportCommand < Gem::Command
   end
 
   def usage # :nodoc:
-    "#{program_name} [FILE]"
+    "#{program_name} GEMFILE"
   end
 
   def execute
+
+    export_file = get_one_optional_argument
+
+    unless export_file then
+      raise Gem::CommandLineError,
+            "Please specify a file to save the export to"
+    end    
+    
     dep = Gem::Dependency.new //, Gem::Requirement.default
     specs = Gem.source_index.search dep
 
