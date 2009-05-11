@@ -1,29 +1,43 @@
 require 'rubygems/command'
-require 'rubygems/commands/query_command'
 
 ##
 # An alternate to Gem::Commands::QueryCommand that searches for gems starting
 # with the the supplied argument.
 
-class Gem::Commands::ExportCommand < Gem::Commands::QueryCommand
+class Gem::Commands::ExportCommand < Gem::Command
 
   def initialize
     super 'export', 'Dumps your currently installed gems into yaml'
-
-    remove_option('--name-matches')
-    options[:format] = 'yaml'
   end
 
   def arguments # :nodoc:
-    "STRING        start of gem name to look for"
+    "FILE        location to save the export to"
   end
 
   def defaults_str # :nodoc:
-    "--local --no-details --format yaml"
+    ""
   end
 
   def usage # :nodoc:
-    "#{program_name} [STRING]"
+    "#{program_name} [FILE]"
+  end
+
+  def execute
+    dep = Gem::Dependency.new //, Gem::Requirement.default
+    specs = Gem.source_index.search dep
+
+    gems = []
+
+    specs.map do |spec|
+      gems << { 
+          :name             => spec.name, 
+          :version          => spec.version.to_s,
+          :install_options  => '' 
+        }
+    end
+
+    output = {'sources' => Gem.sources, 'gems' => gems}
+    say output.to_yaml
   end
 
 end
