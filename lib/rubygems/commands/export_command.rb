@@ -45,7 +45,10 @@ class Gem::Commands::ExportCommand < Gem::Command
     end
 
     output = {'sources' => Gem.sources, 'gems' => gems}
-    say output.to_yaml
+    
+    File.open(export_file, 'w') do |f|
+      f.write output.to_yaml
+    end
   end
 
 end
