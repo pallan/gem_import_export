@@ -8,6 +8,10 @@ The other use for this could be the creation of gem environment "templates" wher
 
 Please add any comments or suggestions to the issues for the github project http://github.com/pallan/gem_import_export/issues
 
+== Requirements
+
+Command plugins require Rubygems >= 1.3.2
+
 == Usage
 
 # exports all gems installed into a yaml file
