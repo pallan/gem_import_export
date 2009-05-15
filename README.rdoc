@@ -1,6 +1,24 @@
 = gem_import_export
 
-Description goes here.
+This is a simple command plugin for rubygems (http://rubygems.rubyforge.net) which adds the commands "import" and "export".  The primary purpose for this plugin is to allow user to specify create mirrors of a gem environment on one machine and them import that environment onto another machine.
+
+The export command generates a yaml file for each gem and each version of that gem that you currently have installed on the machine where you run the command.  The import command reads from that yaml file and installs each gem, and its corresponding version, listed.
+
+The other use for this could be the creation of gem environment "templates" where you export your listing and edit it or create a new yaml file with a selection of gems you want installed.
+
+Please add any comments or suggestions to the issues for the github project http://github.com/pallan/gem_import_export/issues
+
+== Usage
+
+# exports all gems installed into a yaml file
+$ gem export gems.yml
+
+# imports all gems listed in the yaml file
+$ sudo gem import gems.yml
+
+== Todo
+
+* have the import command add the necessary sources that are included in the export file
 
 == Copyright
 
