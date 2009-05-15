@@ -11,10 +11,10 @@ Please add any comments or suggestions to the issues for the github project http
 == Usage
 
 # exports all gems installed into a yaml file
-$ gem export gems.yml
+gem export gems.yml
 
 # imports all gems listed in the yaml file
-$ sudo gem import gems.yml
+gem import gems.yml
 
 == Todo
 
