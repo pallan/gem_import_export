@@ -1,3 +1,5 @@
+= If you are reading this now you are probably using Bundler.  You should continue to do so!
+
 = gem_import_export
 
 This is a simple command plugin for rubygems (http://rubygems.rubyforge.net) which adds the commands "import" and "export".  The primary purpose for this plugin is to allow user to specify create mirrors of a gem environment on one machine and them import that environment onto another machine.
